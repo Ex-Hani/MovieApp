@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">KinoMovie</string>
+    <string name="description">Watch TV Shows &amp; Movies Anywhere. Anytime</string>
+    <string name="login">Login</string>
+    <string name="free">Start Free Month</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign">Sign In</string>
+    <string name="facebook">Login with Facebook</string>
+</resources>
