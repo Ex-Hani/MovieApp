@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="edit_font">25sp</dimen>
+    <dimen name="edit_padding">30dp</dimen>
+    <dimen name="title_font">60sp</dimen>
+    <dimen name="screen_padding">32dp</dimen>
+    <dimen name="constraint">0dp</dimen>
+
+</resources>

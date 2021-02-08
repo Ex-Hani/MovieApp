@@ -7,35 +7,39 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.easylearn.MockData.movies
 
-class ListAdapter(private val context: Context, var image: Array<Int>,var  title: Array<String>) : BaseAdapter() {
+class ListAdapter(
+    private val context: Context,
+    var movie: Array<Movie>
+) : BaseAdapter() {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
-        var view :View? = convertView
-        val viewHolder : ViewHolder
+        var view: View? = convertView
+        val viewHolder: ViewHolder
 
-        if(view == null) {
+        if (view == null) {
             viewHolder = ViewHolder()
-            val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            view = inflater.inflate(R.layout.list_item, null,true)
+            val inflater =
+                context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            view = inflater.inflate(R.layout.list_item, null, true)
 
-        viewHolder.name =view.findViewById(R.id.name)
-        viewHolder.image = view.findViewById(R.id.img)
+            viewHolder.name = view.findViewById(R.id.name)
+            viewHolder.image = view.findViewById(R.id.img)
 
             view.tag = viewHolder
-        }
-        else{
-        viewHolder = view.tag as ViewHolder
+        } else {
+            viewHolder = view.tag as ViewHolder
         }
 
-        viewHolder.name?.text = title[position]
-        viewHolder.image?.setImageResource(image[position])
+        viewHolder.name?.text = movies[position].title
+        viewHolder.image?.setImageResource(movies[position].image)
 
         return view
     }
 
     override fun getItem(position: Int): Any {
-       return position
+        return position
     }
 
     override fun getItemId(position: Int): Long {
@@ -43,11 +47,11 @@ class ListAdapter(private val context: Context, var image: Array<Int>,var  title
     }
 
     override fun getCount(): Int {
-        return image.size
+        return movies.size
     }
 
-    private inner class ViewHolder{
-        var name:TextView? = null
-        internal var image: ImageView? = null
+    private inner class ViewHolder {
+        var name: TextView? = null
+        var image: ImageView? = null
     }
 }
