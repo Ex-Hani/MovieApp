@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import com.example.easylearn.MockData.movies
+import com.example.easylearn.entities.Movie
 
 class ListAdapter(
     private val context: Context,
-    var movie: Array<Movie>
+    var movieList: List<Movie>
 ) : BaseAdapter() {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
@@ -32,8 +32,8 @@ class ListAdapter(
             viewHolder = view.tag as ViewHolder
         }
 
-        viewHolder.name?.text = movies[position].title
-        viewHolder.image?.setImageResource(movies[position].image)
+        viewHolder.name?.text = movieList[position].title
+        viewHolder.image?.setImageResource(movieList[position].image)
 
         return view
     }
@@ -47,11 +47,15 @@ class ListAdapter(
     }
 
     override fun getCount(): Int {
-        return movies.size
+        return movieList.size
     }
 
     private inner class ViewHolder {
         var name: TextView? = null
         var image: ImageView? = null
+    }
+
+    fun setList(list: List<Movie>) {
+        movieList = list
     }
 }

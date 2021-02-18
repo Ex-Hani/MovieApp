@@ -1,136 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/background"
-        android:layout_width="@dimen/constraint"
-        android:layout_height="@dimen/constraint"
-        android:scaleType="centerCrop"
-        android:src="@drawable/joker"
-        android:tint="@color/image_color"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="UseAppTint" />
+    <data>
 
-    <TextView
-        android:id="@+id/logo"
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/potta"
-        android:gravity="center"
-        android:padding="@dimen/screen_padding"
-        android:text="@string/app_name"
-        android:textColor="@color/title_color"
-        android:textSize="@dimen/title_font"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/screen_padding"
-        android:fontFamily="@font/wald"
-        android:gravity="center_vertical"
-        android:padding="15dp"
-        android:text="@string/description"
-        android:textAllCaps="true"
-        android:textColor="@color/white"
-        android:textSize="@dimen/title_font" />
+        <ImageView
+            android:id="@+id/background"
+            android:layout_width="@dimen/constraint"
+            android:layout_height="@dimen/constraint"
+            android:scaleType="centerCrop"
+            android:src="@drawable/joker"
+            android:tint="@color/image_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UseAppTint" />
+
+        <TextView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/potta"
+            android:gravity="center"
+            android:padding="@dimen/screen_padding"
+            android:text="@string/app_name"
+            android:textColor="@color/title_color"
+            android:textSize="@dimen/title_font"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/screen_padding"
+            android:fontFamily="@font/wald"
+            android:gravity="center_vertical"
+            android:padding="15dp"
+            android:text="@string/description"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_font" />
 
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="@dimen/constraint"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/screen_padding"
-        android:layout_marginEnd="@dimen/screen_padding"
-        android:hint="@string/login"
-        android:padding="@dimen/edit_padding"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="@dimen/edit_font"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@id/password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="@dimen/constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_padding"
+            android:layout_marginEnd="@dimen/screen_padding"
+            android:hint="@string/login"
+            android:padding="@dimen/edit_padding"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="@dimen/edit_font"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="@dimen/constraint"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/screen_padding"
-        android:layout_marginEnd="@dimen/screen_padding"
-        android:hint="@string/password"
-        android:padding="@dimen/edit_padding"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="@dimen/edit_font"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@id/sign"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/email" />
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="@dimen/constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_padding"
+            android:layout_marginEnd="@dimen/screen_padding"
+            android:hint="@string/password"
+            android:padding="@dimen/edit_padding"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="@dimen/edit_font"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/sign"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/email" />
 
-    <Button
-        android:id="@+id/sign"
-        android:layout_width="@dimen/constraint"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/screen_padding"
-        android:background="@color/white"
-        android:fontFamily="@font/wald"
-        android:text="@string/sign"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/facebook"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        <Button
+            android:id="@+id/sign"
+            android:layout_width="@dimen/constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/screen_padding"
+            android:background="@color/white"
+            android:fontFamily="@font/wald"
+            android:text="@string/sign"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/facebook"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password" />
 
-    <Button
-        android:id="@+id/facebook"
-        android:layout_width="@dimen/constraint"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/screen_padding"
-        android:background="@color/red"
-        android:fontFamily="@font/wald"
-        android:text="@string/facebook"
-        android:textColor="@color/white"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@id/sign"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/sign"
-        app:layout_constraintTop_toTopOf="@id/sign" />
+        <Button
+            android:id="@+id/facebook"
+            android:layout_width="@dimen/constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/screen_padding"
+            android:background="@color/red"
+            android:fontFamily="@font/wald"
+            android:text="@string/facebook"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/sign"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sign"
+            app:layout_constraintTop_toTopOf="@id/sign" />
 
-    <Button
-        android:id="@+id/login"
-        android:layout_width="@dimen/constraint"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:fontFamily="@font/wald"
-        android:text="@string/login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/free"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/login"
+            android:layout_width="@dimen/constraint"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/wald"
+            android:text="@string/login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/free"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/free"
-        android:layout_width="@dimen/constraint"
-        android:layout_height="wrap_content"
-        android:background="@color/red"
-        android:fontFamily="@font/wald"
-        android:text="@string/free"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/login" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/free"
+            android:layout_width="@dimen/constraint"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:fontFamily="@font/wald"
+            android:text="@string/free"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/login" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

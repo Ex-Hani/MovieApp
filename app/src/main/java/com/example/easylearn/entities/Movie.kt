@@ -1,4 +1,4 @@
-package com.example.easylearn
+package com.example.easylearn.entities
 
 data class Movie(
     val title: String,

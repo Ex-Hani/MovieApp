@@ -1,7 +1,9 @@
 package com.example.easylearn
 
+import com.example.easylearn.entities.Movie
+
 object MockData {
-    val movies = arrayOf<Movie>(
+    val movies = listOf<Movie>(
         Movie("Jumanji: The Next Level", R.drawable.jumanji),
         Movie("Black Panther", R.drawable.black_panther),
         Movie("Mulan", R.drawable.mulan),
