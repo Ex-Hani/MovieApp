@@ -51,4 +51,7 @@ dependencies {
     implementation "com.github.moxy-community:moxy:$moxyVersion"
     kapt "com.github.moxy-community:moxy-compiler:$moxyVersion"
     implementation "com.github.moxy-community:moxy-androidx:$moxyVersion"
+
+    //Recycler
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }
