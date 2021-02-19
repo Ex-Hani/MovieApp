@@ -11,7 +11,7 @@ class MovieAdapter(
     val onItemClick: ((items: List<Movie>?, position: Int) -> Unit)? = null //в конструкторе получаем метод onItemClick, либо null
 ) : RecyclerView.Adapter<MovieHolder>() {
 
-    var items: ArrayList<Movie>? = null
+    var items: List<Movie>? = null
         set(value) {
             field = value
             notifyDataSetChanged() //при любом изменении items обновлять ВСЕ элементы recyclerview
