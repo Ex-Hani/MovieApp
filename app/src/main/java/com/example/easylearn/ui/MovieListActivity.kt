@@ -6,21 +6,21 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.easylearn.MovieAdapter
 import com.example.easylearn.R
 import com.example.easylearn.entities.Movie
-import com.example.easylearn.presentation.MainPresenter
-import com.example.easylearn.presentation.MainView
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.easylearn.presentation.MovieListPresenter
+import com.example.easylearn.presentation.MovieListView
+import kotlinx.android.synthetic.main.activity_movie_list.*
 import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
 
-class MainActivity : MvpAppCompatActivity(), MainView {
+class MovieListActivity : MvpAppCompatActivity(), MovieListView {
 
     @InjectPresenter
-    lateinit var presenter: MainPresenter
+    lateinit var presenter: MovieListPresenter
     lateinit var adapter: MovieAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_movie_list)
 
         adapter = MovieAdapter(onItemClick = { items: List<Movie>?, position: Int ->
             presenter.onItemClicked(items, position)

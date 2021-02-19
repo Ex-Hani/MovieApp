@@ -6,7 +6,7 @@ import moxy.InjectViewState
 import moxy.MvpPresenter
 
 @InjectViewState
-class MainPresenter : MvpPresenter<MainView>() {
+class MovieListPresenter : MvpPresenter<MovieListView>() {
 
     fun onItemClicked(items: List<Movie>?, position: Int) {
         viewState.showMessage(items?.get(position)?.title ?: "")
