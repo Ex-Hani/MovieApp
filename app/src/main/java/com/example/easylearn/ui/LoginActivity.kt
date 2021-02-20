@@ -43,7 +43,7 @@ class LoginActivity : MvpAppCompatActivity(), LoginView {
     }
 
     override fun toMainScreen() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, MovieListActivity::class.java)
         startActivity(intent)
 
     }

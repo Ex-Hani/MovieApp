@@ -8,5 +8,5 @@
     <string name="sign">Sign In</string>
     <string name="facebook">Login with Facebook</string>
     <string name="error">Введите данные!</string>
-    <string name="start">Start a movie</string>
+    <string name="start">Start the %s movie</string>
 </resources>
