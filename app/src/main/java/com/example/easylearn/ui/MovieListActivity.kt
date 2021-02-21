@@ -25,8 +25,8 @@ class MovieListActivity : MvpAppCompatActivity(), MovieListView {
         adapter = MovieAdapter(this, onItemClick = { items: List<OmdbMovie>?, position: Int ->
             presenter.onItemClicked(items, position)
         })
-        recycler_view.layoutManager = LinearLayoutManager(this)
-        recycler_view.adapter = adapter
+        movie_list_recycler_movies.layoutManager = LinearLayoutManager(this)
+        movie_list_recycler_movies.adapter = adapter
     }
 
     override fun showMessage(msg: String) {
