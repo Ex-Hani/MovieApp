@@ -1,5 +1,6 @@
 package com.example.easylearn.presentation
 
+import android.util.Log
 import com.example.easylearn.entities.OmdbMovie
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -14,7 +15,8 @@ class MovieListPresenter : MvpPresenter<MovieListView>(), CoroutineScope by Coro
 ) {
 
     fun onItemClicked(items: List<OmdbMovie>?, position: Int) {
-        viewState.showMessage(items?.get(position)?.title ?: "")
+        Log.d("__lal", "onItemClicked ${items?.get(position)?.imdbID}")
+        viewState.toCurrentMovie(items?.get(position)?.imdbID ?: "")
     }
 
     override fun onFirstViewAttach() {
