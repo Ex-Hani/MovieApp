@@ -25,6 +25,9 @@ class MovieListActivity : MvpAppCompatActivity(), MovieListView {
         adapter = MovieAdapter(this, onItemClick = { items: List<OmdbMovie>?, position: Int ->
             presenter.onItemClicked(items, position)
         })
+        movie_list_button_search.setOnClickListener{
+            presenter.onSearchClicked(movie_list_edit_search.text.toString())
+        }
         movie_list_recycler_movies.layoutManager = LinearLayoutManager(this)
         movie_list_recycler_movies.adapter = adapter
     }

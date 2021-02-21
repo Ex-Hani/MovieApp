@@ -34,4 +34,8 @@ class MovieListPresenter : MvpPresenter<MovieListView>(), CoroutineScope by Coro
             }
         }
     }
+
+    fun onSearchClicked(toString: String) {
+        loadList(toString)
+    }
 }
