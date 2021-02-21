@@ -26,7 +26,6 @@ class MovieListActivity : MvpAppCompatActivity(), MovieListView {
         setContentView(R.layout.activity_movie_list)
 
         adapter = MovieAdapter(this, onItemClick = { items: List<OmdbMovie>?, position: Int ->
-            Log.d("__lal", "OnClicked ${Gson().toJson(items?.get(position))}")
             presenter.onItemClicked(items, position)
         })
         movie_list_button_search.setOnClickListener {
@@ -37,7 +36,6 @@ class MovieListActivity : MvpAppCompatActivity(), MovieListView {
     }
 
     override fun toCurrentMovie(id: String) {
-        Log.d("__lal", "To Movie ${id}")
         Data.imdbId = id
         intent = Intent(this, CurrentMovieActivity::class.java)
         startActivity(intent)
