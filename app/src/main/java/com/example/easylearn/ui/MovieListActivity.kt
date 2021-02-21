@@ -5,7 +5,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.easylearn.MovieAdapter
 import com.example.easylearn.R
-import com.example.easylearn.entities.Movie
+import com.example.easylearn.entities.OmdbMovie
 import com.example.easylearn.presentation.MovieListPresenter
 import com.example.easylearn.presentation.MovieListView
 import kotlinx.android.synthetic.main.activity_movie_list.*
@@ -22,7 +22,7 @@ class MovieListActivity : MvpAppCompatActivity(), MovieListView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_list)
 
-        adapter = MovieAdapter(onItemClick = { items: List<Movie>?, position: Int ->
+        adapter = MovieAdapter(this, onItemClick = { items: List<OmdbMovie>?, position: Int ->
             presenter.onItemClicked(items, position)
         })
         recycler_view.layoutManager = LinearLayoutManager(this)
@@ -34,7 +34,7 @@ class MovieListActivity : MvpAppCompatActivity(), MovieListView {
             .show()
     }
 
-    override fun setList(list: List<Movie>) {
+    override fun setList(list: List<OmdbMovie>) {
         adapter.items = list
     }
 }

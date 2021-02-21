@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/background"
+            android:id="@+id/login_image_bg"
             android:layout_width="@dimen/constraint"
             android:layout_height="@dimen/constraint"
             android:scaleType="centerCrop"
@@ -25,7 +25,7 @@
             tools:ignore="UseAppTint" />
 
         <TextView
-            android:id="@+id/logo"
+            android:id="@+id/login_text_logo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/potta"
