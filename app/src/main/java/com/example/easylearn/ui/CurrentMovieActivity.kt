@@ -27,6 +27,10 @@ class CurrentMovieActivity : MvpAppCompatActivity(), CurrentMovieView {
         Glide.with(this)
             .load(result.poster)
             .into(current_movie_image_poster)
-        current_movie_text_details.text = result.toString()
+        current_movie_text_title.text = result.title
+        current_movie_text_year.text = result.year.toString()
+        current_movie_text_genre.text = result.genre
+        current_movie_text_director.text = result.director
+        current_movie_text_plot.text = result.plot
     }
 }
