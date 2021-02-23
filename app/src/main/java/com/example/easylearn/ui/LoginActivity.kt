@@ -9,6 +9,7 @@ import com.example.easylearn.R
 import com.example.easylearn.databinding.ActivityLoginBinding
 import com.example.easylearn.presentation.LoginPresenter
 import com.example.easylearn.presentation.LoginView
+import com.example.easylearn.ui.movieList.MovieListActivity
 import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
 

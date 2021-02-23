@@ -1,4 +1,4 @@
-package com.example.easylearn
+package com.example.easylearn.ui.movieList
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.easylearn.R
 import com.example.easylearn.databinding.RecyclerviewItemBinding
 import com.example.easylearn.entities.OmdbMovie
 

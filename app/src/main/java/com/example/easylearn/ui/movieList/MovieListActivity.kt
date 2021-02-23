@@ -1,16 +1,16 @@
-package com.example.easylearn.ui
+package com.example.easylearn.ui.movieList
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.easylearn.Data
-import com.example.easylearn.MovieAdapter
 import com.example.easylearn.R
 import com.example.easylearn.databinding.ActivityMovieListBinding
 import com.example.easylearn.entities.OmdbMovie
 import com.example.easylearn.presentation.MovieListPresenter
 import com.example.easylearn.presentation.MovieListView
+import com.example.easylearn.ui.CurrentMovieActivity
 import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
 

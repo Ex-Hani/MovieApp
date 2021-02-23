@@ -1,4 +1,4 @@
-package com.example.easylearn
+package com.example.easylearn.ui.movieList
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
