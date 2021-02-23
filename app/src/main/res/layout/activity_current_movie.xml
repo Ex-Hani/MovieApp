@@ -1,73 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.CurrentMovieActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".ui.CurrentMovieActivity">
 
-        <ImageView
-            android:id="@+id/current_movie_image_poster"
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:padding="10dp"
-            app:layout_constraintEnd_toStartOf="@id/current_movie_text_title"
- />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/current_movie_text_title"
-            android:padding="@dimen/padding_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/title_text_size"
-            android:textColor="@color/colorPrimaryDark"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/current_movie_image_poster"/>
-        <TextView
-            android:id="@+id/current_movie_text_year"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/padding_text"
-            app:layout_constraintTop_toBottomOf="@id/current_movie_text_title"
-            app:layout_constraintStart_toEndOf="@id/current_movie_image_poster"
-            android:textSize="@dimen/title_text_size"
-            android:textColor="@color/colorPrimaryDark"/>
-        <TextView
-            android:id="@+id/current_movie_text_genre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/current_movie_text_year"
-            app:layout_constraintStart_toEndOf="@id/current_movie_image_poster"
-            android:padding="@dimen/padding_text"
-            android:textSize="@dimen/title_text_size"
-            android:textColor="@color/colorPrimaryDark"/>
-        <TextView
-            android:id="@+id/current_movie_text_director"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/current_movie_text_genre"
-            app:layout_constraintStart_toEndOf="@id/current_movie_image_poster"
-            android:padding="@dimen/padding_text"
-            android:textSize="@dimen/title_text_size"
-            android:textColor="@color/colorPrimaryDark"/>
-        <TextView
-            android:id="@+id/current_movie_text_plot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/current_movie_image_poster"
-            app:layout_constraintStart_toStartOf="parent"
-            android:paddingStart="@dimen/padding_text"
-            android:paddingEnd="@dimen/padding_text"
-            android:paddingTop="@dimen/padding_plot"
-            android:textSize="@dimen/title_text_size"
-            android:textColor="@color/colorPrimaryDark"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/current_movie_image_poster"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:padding="10dp"
+                app:layout_constraintEnd_toStartOf="@id/current_movie_text_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/current_movie_text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_text"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/title_text_size"
+                app:layout_constraintStart_toEndOf="@id/current_movie_image_poster"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/current_movie_text_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_text"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/title_text_size"
+                app:layout_constraintStart_toEndOf="@id/current_movie_image_poster"
+                app:layout_constraintTop_toBottomOf="@id/current_movie_text_title" />
+
+            <TextView
+                android:id="@+id/current_movie_text_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_text"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/title_text_size"
+                app:layout_constraintStart_toEndOf="@id/current_movie_image_poster"
+                app:layout_constraintTop_toBottomOf="@id/current_movie_text_year" />
+
+            <TextView
+                android:id="@+id/current_movie_text_director"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_text"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/title_text_size"
+                app:layout_constraintStart_toEndOf="@id/current_movie_image_poster"
+                app:layout_constraintTop_toBottomOf="@id/current_movie_text_genre" />
+
+            <TextView
+                android:id="@+id/current_movie_text_plot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_text"
+                android:paddingTop="@dimen/padding_plot"
+                android:paddingEnd="@dimen/padding_text"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/title_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/current_movie_image_poster" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</ScrollView>
+    </ScrollView>
+</layout>
