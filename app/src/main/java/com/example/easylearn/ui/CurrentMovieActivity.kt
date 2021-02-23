@@ -20,18 +20,21 @@ class CurrentMovieActivity : MvpAppCompatActivity(), CurrentMovieView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_current_movie)
         presenter.loadMovieDetails(Data.imdbId)
     }
 
     override fun showMovieData(result: OmdbMovieDetails) {
-        Glide.with(this)
-            .load(result.poster)
-            .into(binding.currentMovieImagePoster)
-        binding.currentMovieTextTitle.text = result.title
-        binding.currentMovieTextYear.text = result.year.toString()
-        binding.currentMovieTextGenre.text = result.genre
-        binding.currentMovieTextDirector.text = result.director
-        binding.currentMovieTextPlot.text = result.plot
+        binding.apply {
+            Glide.with(this@CurrentMovieActivity)
+                .load(result.poster)
+                .into(currentMovieImagePoster)
+            currentMovieTextTitle.text = result.title
+            currentMovieTextYear.text = result.year.toString()
+            currentMovieTextGenre.text = result.genre
+            currentMovieTextDirector.text = result.director
+            currentMovieTextPlot.text = result.plot
+        }
     }
 }

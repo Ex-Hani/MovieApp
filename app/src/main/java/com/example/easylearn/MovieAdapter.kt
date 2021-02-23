@@ -4,15 +4,18 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.easylearn.databinding.RecyclerviewItemBinding
 import com.example.easylearn.entities.OmdbMovie
-import kotlinx.android.synthetic.main.recyclerview_item.view.*
 
 class MovieAdapter(
     val context: Context,
     val onItemClick: ((items: List<OmdbMovie>?, position: Int) -> Unit)? = null //в конструкторе получаем метод onItemClick, либо null
 ) : RecyclerView.Adapter<MovieHolder>() {
+
+    lateinit var binding: RecyclerviewItemBinding
 
     var items: List<OmdbMovie>? = null //список может быть - null
         set(value) {
@@ -24,13 +27,16 @@ class MovieAdapter(
         parent: ViewGroup,
         viewType: Int
     ): MovieHolder { // метод вызывается при создании ViewHolder
-        val v = LayoutInflater.from(parent.context).inflate(
+
+        binding = DataBindingUtil.inflate(
+            LayoutInflater.from(parent.context),
             R.layout.recyclerview_item,
             parent,
             false
-        ) // передаём переменной xml элемента списка
+        )
+
         return object :
-            MovieHolder(v) { //при привязке Holdera переопределяем его onClick и записываем туда свой Unit
+            MovieHolder(binding) { //при привязке Holdera переопределяем его onClick и записываем туда свой Unit
             override fun onClick(v: View?) {
                 onItemClick?.invoke(items, adapterPosition)
             }
@@ -38,10 +44,10 @@ class MovieAdapter(
     }
 
     override fun onBindViewHolder(holder: MovieHolder, position: Int) {
-        (holder).itemView.name.setText(items?.get(position)?.title.toString()) //крепим наши данные из items в xml layout
+        (holder).binding.name.text = items?.get(position)?.title.toString()
         Glide.with(context)
             .load(items?.get(position)?.poster)
-            .into((holder).itemView.img)
+            .into((holder).binding.img)
     }
 
     override fun getItemCount(): Int {
