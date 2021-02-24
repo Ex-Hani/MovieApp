@@ -10,7 +10,7 @@ interface LoginView : MvpView {
 
     @Skip
     fun toMainScreen()
-
+//TODO прогугли и осознай разницу между AddToEnd и AddToEndSingle
     @AddToEnd
     fun switchViews()
 }

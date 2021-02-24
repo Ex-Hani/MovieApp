@@ -45,6 +45,8 @@ class LoginActivity : MvpAppCompatActivity(), LoginView {
         binding.facebook.visibility = View.VISIBLE
     }
 
+    //TODO переименуй все, слышишь ВСЕ МЕТОДЫ чтобы они были в одинаковом стиле
+    // в презентере должны быть onButtonClicked (ибо он вызовется ПОСЛЕ нажатия) остальное импровизируй
     override fun toMainScreen() {
         val intent = Intent(this, MovieListActivity::class.java)
         startActivity(intent)

@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <!-- TODO НЕ ДОПУСКАЙ ТАКИХ ЕБАНЫХ ТЕГОВ -->
+        <!-- Пройдись вообще по всему проекту и посмотри на что у тебя студия ругается -->
         <activity android:name=".ui.CurrentMovieActivity"></activity>
         <activity android:name=".ui.LoginActivity">
             <intent-filter>

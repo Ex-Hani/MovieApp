@@ -21,6 +21,7 @@ class MovieListActivity : MvpAppCompatActivity(), MovieListView {
     lateinit var adapter: MovieAdapter
     lateinit var binding: ActivityMovieListBinding
 
+    //TODO после super тоже оставляй одну строчку пустую - так немножко читабельнее будет
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_movie_list)

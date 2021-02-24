@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- TODO цвета хардкодом, рли? У тебя что, нет файла Colors? -->
     <RelativeLayout
         android:id="@+id/root_layout"
         android:layout_width="match_parent"

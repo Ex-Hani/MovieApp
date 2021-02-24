@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+<!-- TODO пустые теги оффай -->
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,6 +52,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/title_font" />
 
+        <!-- TODO пройти по ВСЕМ айдишникам и дать им один вид. Никаких email быть не должно -->
 
         <EditText
             android:id="@+id/email"

@@ -1,4 +1,9 @@
 <resources>
+    <!-- TODO Самая жесть какую можно только представить -->
+<!--    определись с названиями, у них должна быть одна маска названия-->
+<!--    например экран где оно есть, вью где оно есть и описание-->
+<!--    типа login_edittext_password (тут кстати можешь пример с айдишников взять)-->
+<!--    А какого хрена ты так и не определился с языком твоего приложения? Что за хрень? И строки неиспользуемые удали-->
     <string name="app_name">KinoMovie</string>
     <string name="description">Watch TV Shows &amp; Movies Anywhere. Anytime</string>
     <string name="login">Login</string>

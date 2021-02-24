@@ -13,7 +13,7 @@ import moxy.MvpPresenter
 class MovieListPresenter : MvpPresenter<MovieListView>(), CoroutineScope by CoroutineScope(
     Dispatchers.Main
 ) {
-
+//TODO убрать лишние логи, либо сделать их "красивыми" с тегом и все такое
     fun onItemClicked(items: List<OmdbMovie>?, position: Int) {
         Log.d("__lal", "onItemClicked ${items?.get(position)?.imdbID}")
         viewState.toCurrentMovie(items?.get(position)?.imdbID ?: "")
@@ -21,7 +21,7 @@ class MovieListPresenter : MvpPresenter<MovieListView>(), CoroutineScope by Coro
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-
+            //TODO продумай логику первого запуска тоже, что показывать при входе?
         loadList("batman") //вызываем функцию загрузки списка
     }
 

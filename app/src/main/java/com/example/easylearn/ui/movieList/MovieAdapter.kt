@@ -11,6 +11,7 @@ import com.example.easylearn.R
 import com.example.easylearn.databinding.RecyclerviewItemBinding
 import com.example.easylearn.entities.OmdbMovie
 
+//TODO Твои строчки кода никогда не должны быть такими длинным, чтобы перекрывать вот эту полоску ->
 class MovieAdapter(
     val context: Context,
     val onItemClick: ((items: List<OmdbMovie>?, position: Int) -> Unit)? = null //в конструкторе получаем метод onItemClick, либо null
@@ -36,6 +37,8 @@ class MovieAdapter(
             false
         )
 
+        //TODO попробуй переписать onClick таким образом, чтобы передавать onItemCllick в конструктор,
+        // а внутри холдера уже навешивать его на onClickListener, и уберешь таким образом оверрайд и инвоук
         return object :
             MovieHolder(binding) { //при привязке Holdera переопределяем его onClick и записываем туда свой Unit
             override fun onClick(v: View?) {

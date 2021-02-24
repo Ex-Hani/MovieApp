@@ -12,6 +12,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!-- TODO ЧТО ЗА 200dp блять? ВСЕ Фиксированные параметры выносятся в dimens и переиспользуются -->
+            <!-- а вообще их лучше избегать где можешь -->
             <ImageView
                 android:id="@+id/current_movie_image_poster"
                 android:layout_width="wrap_content"

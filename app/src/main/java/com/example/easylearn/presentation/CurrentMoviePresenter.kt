@@ -15,6 +15,9 @@ class CurrentMoviePresenter : MvpPresenter<CurrentMovieView>(), CoroutineScope b
     fun loadMovieDetails(id: String) {
         launch {
             try {
+                //TODO добавь проверку на поле response (пришел ли корректный ответ)
+                // и выводи ошибки на viewState разные (если эксепшн и если response false)
+                // ВЕЗДЕ
                 val result =
                     ApiAdapter.apiClient.loadMovieDetails(imdbId = id) //объявляем переменную которая будет получать список нужных нам данных
                 viewState.showMovieData(result)
