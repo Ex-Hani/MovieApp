@@ -2,6 +2,7 @@ package com.example.easylearn.ui.movieList
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.easylearn.Data
@@ -21,8 +22,8 @@ class MovieListActivity : MvpAppCompatActivity(), MovieListView {
     lateinit var adapter: MovieAdapter
     lateinit var binding: ActivityMovieListBinding
 
-    //TODO после super тоже оставляй одну строчку пустую - так немножко читабельнее будет
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_movie_list)
 
@@ -44,5 +45,9 @@ class MovieListActivity : MvpAppCompatActivity(), MovieListView {
 
     override fun setList(list: List<OmdbMovie>) {
         adapter.items = list
+    }
+
+    override fun showError() {
+        Toast.makeText(this, getString(R.string.data_error), Toast.LENGTH_SHORT).show()
     }
 }

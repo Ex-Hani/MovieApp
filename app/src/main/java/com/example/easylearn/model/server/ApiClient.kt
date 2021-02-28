@@ -5,17 +5,20 @@ import com.example.easylearn.entities.OmdbResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface ApiClient { //создаём интерфейс клиента АПИ
-    @GET("/") //запрос
+//create API interface
+interface ApiClient {
+
+    //ur request
+    @GET("/")
     suspend fun getMovies(
         @Query("s") search: String = "game",
-        //TODO ключ поменяй уже на свой, а то когда я юзать его начну - нас забанят обоих
-        @Query("apikey") apikey: String = "9c8e835c"
-    ): OmdbResponse //функция которая получает данные
+        @Query("apikey") apikey: String = "8c28da5d"
+//    Function get data
+    ): OmdbResponse
 
     @GET("/")
     suspend fun loadMovieDetails(
         @Query("i") imdbId: String,
-        @Query("apikey") apikey: String = "9c8e835c"
+        @Query("apikey") apikey: String = "8c28da5d"
     ): OmdbMovieDetails
 }

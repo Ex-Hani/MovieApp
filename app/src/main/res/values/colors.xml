@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#000000</color>
+    <!--Default colors-->
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="white">#ffffff</color>
-    <color name="red">#a91a0f</color>
+
+    <!--Custom colors-->
+    <color name="login_button">#a91a0f</color>
     <color name="title_color">#ff6666</color>
     <color name="image_color">#A0000000</color>
-<!-- TODO определись с названиями цветов, ты либо называешь их по назначению image, title, button, primary -->
-    <!-- Либо ты называешь их цветами white, red, black, orange, blue -->
-    <!-- Первый вариант предпочтительнее, ведь ты можешь изменить цвета, перекрасить все приложение -->
-    <!-- И тогда у тебя будет цвет, который называется RED но в котором какой-нибудь синий -->
+    <color name="black_background_list_item">#232323</color>
 </resources>

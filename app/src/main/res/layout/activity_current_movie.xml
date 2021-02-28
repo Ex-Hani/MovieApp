@@ -6,74 +6,86 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/black_background_list_item"
         tools:context=".ui.CurrentMovieActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-            <!-- TODO ЧТО ЗА 200dp блять? ВСЕ Фиксированные параметры выносятся в dimens и переиспользуются -->
-            <!-- а вообще их лучше избегать где можешь -->
             <ImageView
                 android:id="@+id/current_movie_image_poster"
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:padding="10dp"
+                android:layout_width="@dimen/constraint"
+                android:src="@drawable/ic_launcher_foreground"
+                android:layout_height="@dimen/constraint"
+                android:padding="@dimen/padding_text"
                 app:layout_constraintEnd_toStartOf="@id/current_movie_text_title"
+                app:layout_constraintBottom_toTopOf="@id/current_movie_text_plot"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/description_movie_poster" />
 
             <TextView
                 android:id="@+id/current_movie_text_title"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/constraint"
                 android:layout_height="wrap_content"
+                android:text="@string/sample_text"
                 android:padding="@dimen/padding_text"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/white"
                 android:textSize="@dimen/title_text_size"
                 app:layout_constraintStart_toEndOf="@id/current_movie_image_poster"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/current_movie_text_year"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/constraint"
                 android:layout_height="wrap_content"
+                android:text="@string/sample_text"
                 android:padding="@dimen/padding_text"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/white"
                 android:textSize="@dimen/title_text_size"
                 app:layout_constraintStart_toEndOf="@id/current_movie_image_poster"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/current_movie_text_title" />
 
             <TextView
                 android:id="@+id/current_movie_text_genre"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/constraint"
                 android:layout_height="wrap_content"
+                android:text="@string/sample_text"
                 android:padding="@dimen/padding_text"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/white"
                 android:textSize="@dimen/title_text_size"
                 app:layout_constraintStart_toEndOf="@id/current_movie_image_poster"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/current_movie_text_year" />
 
             <TextView
                 android:id="@+id/current_movie_text_director"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/constraint"
                 android:layout_height="wrap_content"
+                android:text="@string/sample_text"
                 android:padding="@dimen/padding_text"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/white"
                 android:textSize="@dimen/title_text_size"
                 app:layout_constraintStart_toEndOf="@id/current_movie_image_poster"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/current_movie_text_genre" />
 
             <TextView
                 android:id="@+id/current_movie_text_plot"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/constraint"
                 android:layout_height="wrap_content"
+                android:text="@string/sample_long_text"
                 android:paddingStart="@dimen/padding_text"
                 android:paddingTop="@dimen/padding_plot"
                 android:paddingEnd="@dimen/padding_text"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/white"
                 android:textSize="@dimen/title_text_size"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/current_movie_image_poster" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/current_movie_text_director" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

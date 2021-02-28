@@ -2,8 +2,8 @@ package com.example.easylearn.entities
 
 import com.google.gson.annotations.SerializedName
 
-//TODO после обьявления класса делай отступ в 1 строку (на других классах можешь посмотреть как)
 data class OmdbMovieDetails(
+
     @SerializedName("Title") val title: String,
     @SerializedName("Year") val year: Int,
     @SerializedName("Rated") val rated: String,
@@ -29,4 +29,5 @@ data class OmdbMovieDetails(
     @SerializedName("Production") val production: String,
     @SerializedName("Website") val website: String,
     @SerializedName("Response") val response: Boolean
+
 )

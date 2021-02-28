@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Font-size-->
     <dimen name="edit_font">25sp</dimen>
-    <dimen name="edit_padding">30dp</dimen>
     <dimen name="title_font">60sp</dimen>
-    <dimen name="screen_padding">32dp</dimen>
+    <dimen name="logo_text_font_size">50sp</dimen>
+    <dimen name="title_text_size">24sp</dimen>
+
+    <!--Group padding/margin/width/height-->
     <dimen name="constraint">0dp</dimen>
     <dimen name="padding_text">10dp</dimen>
     <dimen name="padding_plot">20dp</dimen>
-    <dimen name="title_text_size">24sp</dimen>
-<!-- TODO выдумай какую-то стандартную маску для названия дименов и подели по группам их -->
+    <dimen name="edit_padding">30dp</dimen>
+    <dimen name="padding_screen">32dp</dimen>
+    <dimen name="height_hint_search">50dp</dimen>
+    <dimen name="poster_height">200dp</dimen>
 </resources>

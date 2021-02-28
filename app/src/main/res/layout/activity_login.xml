@@ -3,10 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-<!-- TODO пустые теги оффай -->
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -16,13 +12,13 @@
             android:layout_width="@dimen/constraint"
             android:layout_height="@dimen/constraint"
             android:scaleType="centerCrop"
-            android:src="@drawable/joker"
+            android:src="@drawable/joker_bg"
             android:tint="@color/image_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="UseAppTint" />
+            tools:ignore="ContentDescription,UseAppTint" />
 
         <TextView
             android:id="@+id/login_text_logo"
@@ -30,115 +26,64 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/potta"
             android:gravity="center"
-            android:padding="@dimen/screen_padding"
+            android:padding="@dimen/padding_screen"
             android:text="@string/app_name"
             android:textColor="@color/title_color"
-            android:textSize="@dimen/title_font"
+            android:textSize="@dimen/logo_text_font_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/screen_padding"
-            android:fontFamily="@font/wald"
-            android:gravity="center_vertical"
-            android:padding="15dp"
-            android:text="@string/description"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            android:textSize="@dimen/title_font" />
-
-        <!-- TODO пройти по ВСЕМ айдишникам и дать им один вид. Никаких email быть не должно -->
-
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/login_login_text"
             android:layout_width="@dimen/constraint"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/screen_padding"
-            android:layout_marginEnd="@dimen/screen_padding"
-            android:hint="@string/login"
+            android:layout_marginStart="@dimen/padding_screen"
+            android:layout_marginEnd="@dimen/padding_screen"
+            android:hint="@string/login_activity_login_text"
             android:padding="@dimen/edit_padding"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="@dimen/edit_font"
-            android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@id/password"
+            app:layout_constraintBottom_toTopOf="@id/login_password_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed" />
+            app:layout_constraintVertical_chainStyle="packed"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/login_password_text"
             android:layout_width="@dimen/constraint"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/screen_padding"
-            android:layout_marginEnd="@dimen/screen_padding"
-            android:hint="@string/password"
+            android:layout_marginStart="@dimen/padding_screen"
+            android:layout_marginEnd="@dimen/padding_screen"
+            android:hint="@string/login_activity_text_password"
             android:padding="@dimen/edit_padding"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="@dimen/edit_font"
-            android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@id/sign"
+            app:layout_constraintBottom_toTopOf="@id/login_btn_sign_in"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/email" />
+            app:layout_constraintTop_toBottomOf="@id/login_login_text"
+            android:importantForAutofill="no"
+            android:inputType="textPassword" />
 
         <Button
-            android:id="@+id/sign"
+            android:id="@+id/login_btn_sign_in"
             android:layout_width="@dimen/constraint"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/screen_padding"
+            android:layout_marginStart="@dimen/padding_screen"
             android:background="@color/white"
             android:fontFamily="@font/wald"
-            android:text="@string/sign"
-            android:visibility="gone"
+            android:text="@string/login_activity_text_sign"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/facebook"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password" />
+            app:layout_constraintTop_toBottomOf="@+id/login_password_text" />
 
-        <Button
-            android:id="@+id/facebook"
-            android:layout_width="@dimen/constraint"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/screen_padding"
-            android:background="@color/red"
-            android:fontFamily="@font/wald"
-            android:text="@string/facebook"
-            android:textColor="@color/white"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@id/sign"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/sign"
-            app:layout_constraintTop_toTopOf="@id/sign" />
 
-        <Button
-            android:id="@+id/login"
-            android:layout_width="@dimen/constraint"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/wald"
-            android:text="@string/login"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/free"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/free"
-            android:layout_width="@dimen/constraint"
-            android:layout_height="wrap_content"
-            android:background="@color/red"
-            android:fontFamily="@font/wald"
-            android:text="@string/free"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/login" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

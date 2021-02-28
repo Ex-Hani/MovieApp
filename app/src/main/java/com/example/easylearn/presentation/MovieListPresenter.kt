@@ -1,11 +1,10 @@
 package com.example.easylearn.presentation
 
-import android.util.Log
 import com.example.easylearn.entities.OmdbMovie
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import me.v12ten.retrofittests.model.server.ApiAdapter
+import com.example.easylearn.model.server.ApiAdapter
 import moxy.InjectViewState
 import moxy.MvpPresenter
 
@@ -13,26 +12,29 @@ import moxy.MvpPresenter
 class MovieListPresenter : MvpPresenter<MovieListView>(), CoroutineScope by CoroutineScope(
     Dispatchers.Main
 ) {
-//TODO убрать лишние логи, либо сделать их "красивыми" с тегом и все такое
+
     fun onItemClicked(items: List<OmdbMovie>?, position: Int) {
-        Log.d("__lal", "onItemClicked ${items?.get(position)?.imdbID}")
         viewState.toCurrentMovie(items?.get(position)?.imdbID ?: "")
     }
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-            //TODO продумай логику первого запуска тоже, что показывать при входе?
-        loadList("batman") //вызываем функцию загрузки списка
+        loadList("joker")
     }
 
-    private fun loadList(search: String) { //функция загружает список
+    private fun loadList(search: String) {
         launch {
             try {
                 val result =
-                    ApiAdapter.apiClient.getMovies(search = search) //объявляем переменную которая будет получать список нужных нам данных
-                viewState.setList(result.search) // показываем список данных
+                    ApiAdapter.apiClient.getMovies(search = search)
+                //showing the list with data
+                if (result.response)
+                viewState.setList(result.search)
+                else viewState.showError()
             } catch (e: Exception) {
-                e.printStackTrace() //или показываем ошибку
+                //or showing error
+                e.printStackTrace()
+                viewState.showError()
             }
         }
     }

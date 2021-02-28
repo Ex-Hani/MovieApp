@@ -1,51 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- TODO цвета хардкодом, рли? У тебя что, нет файла Colors? -->
     <RelativeLayout
         android:id="@+id/root_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#232323"
+        android:background="@color/black_background_list_item"
         android:padding="20dp">
 
         <ImageView
-            android:id="@+id/img"
+            android:id="@+id/recycler_poster"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@drawable/ic_launcher_foreground"
+            android:contentDescription="@string/description_movie_poster" />
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/recycler_movie_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:layout_toRightOf="@id/img"
+            android:layout_toEndOf="@id/recycler_poster"
             android:text="@string/app_name"
             android:textColor="#fff"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="RelativeOverlap" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/name"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@id/img"
-            android:text="Watch Now"
+            android:layout_below="@id/recycler_movie_name"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@id/recycler_poster"
+            android:text="@string/recycler_watch"
             android:textColor="#fff" />
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
             android:adjustViewBounds="true"
-            android:src="@drawable/option" />
+            android:src="@drawable/option_icon"
+            android:contentDescription="@string/icon_menu" />
     </RelativeLayout>
 </layout>

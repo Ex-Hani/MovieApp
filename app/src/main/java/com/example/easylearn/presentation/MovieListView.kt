@@ -12,4 +12,7 @@ interface MovieListView : MvpView {
 
     @AddToEndSingle
     fun setList(list: List<OmdbMovie>)
+
+    @Skip
+    fun showError()
 }

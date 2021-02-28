@@ -11,24 +11,27 @@ import com.example.easylearn.R
 import com.example.easylearn.databinding.RecyclerviewItemBinding
 import com.example.easylearn.entities.OmdbMovie
 
-//TODO Твои строчки кода никогда не должны быть такими длинным, чтобы перекрывать вот эту полоску ->
 class MovieAdapter(
-    val context: Context,
-    val onItemClick: ((items: List<OmdbMovie>?, position: Int) -> Unit)? = null //в конструкторе получаем метод onItemClick, либо null
+    private val context: Context,
+    val onItemClick: ((
+        items: List<OmdbMovie>?,
+        position: Int
+    ) -> Unit)? = null //in constructor get onItemClick or null
 ) : RecyclerView.Adapter<MovieHolder>() {
 
     lateinit var binding: RecyclerviewItemBinding
 
-    var items: List<OmdbMovie>? = null //список может быть - null
+    var items: List<OmdbMovie>? = null
         set(value) {
             field = value
-            notifyDataSetChanged() //если данные изменились, список автоматически будет обновляться
+            //if data was changed -> reset
+            notifyDataSetChanged()
         }
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): MovieHolder { // метод вызывается при создании ViewHolder
+    ): MovieHolder {
 
         binding = DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
@@ -37,10 +40,8 @@ class MovieAdapter(
             false
         )
 
-        //TODO попробуй переписать onClick таким образом, чтобы передавать onItemCllick в конструктор,
-        // а внутри холдера уже навешивать его на onClickListener, и уберешь таким образом оверрайд и инвоук
         return object :
-            MovieHolder(binding) { //при привязке Holdera переопределяем его onClick и записываем туда свой Unit
+            MovieHolder(binding) {
             override fun onClick(v: View?) {
                 onItemClick?.invoke(items, adapterPosition)
             }
@@ -48,13 +49,13 @@ class MovieAdapter(
     }
 
     override fun onBindViewHolder(holder: MovieHolder, position: Int) {
-        (holder).binding.name.text = items?.get(position)?.title.toString()
+        (holder).binding.recyclerMovieName.text = items?.get(position)?.title.toString()
         Glide.with(context)
             .load(items?.get(position)?.poster)
-            .into((holder).binding.img)
+            .into((holder).binding.recyclerPoster)
     }
 
     override fun getItemCount(): Int {
-        return items?.size ?: 0 //сколько элементов отобразить ?
+        return items?.size ?: 0
     }
 }

@@ -1,17 +1,15 @@
 <resources>
-    <!-- TODO Самая жесть какую можно только представить -->
-<!--    определись с названиями, у них должна быть одна маска названия-->
-<!--    например экран где оно есть, вью где оно есть и описание-->
-<!--    типа login_edittext_password (тут кстати можешь пример с айдишников взять)-->
-<!--    А какого хрена ты так и не определился с языком твоего приложения? Что за хрень? И строки неиспользуемые удали-->
     <string name="app_name">KinoMovie</string>
-    <string name="description">Watch TV Shows &amp; Movies Anywhere. Anytime</string>
-    <string name="login">Login</string>
-    <string name="free">Start Free Month</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
-    <string name="sign">Sign In</string>
-    <string name="facebook">Login with Facebook</string>
-    <string name="error">Введите данные!</string>
-    <string name="start">Start the %s movie</string>
+    <string name="login_activity_login_text">Login</string>
+    <string name="login_activity_text_password">Password</string>
+    <string name="login_activity_text_sign">Sign In</string>
+    <string name="movie_list_search_btn">Search</string>
+    <string name="movie_list_hint_search">Search Movies</string>
+    <string name="recycler_watch">Watch now</string>
+    <string name="error">Enter data!</string>
+    <string name="data_error">Couldn\'\t get data</string>
+    <string name="description_movie_poster">Movie poster</string>
+    <string name="icon_menu">Menu</string>
+    <string name="sample_text" />
+    <string name="sample_long_text" />
 </resources>
