@@ -27,9 +27,6 @@ class CurrentMovieFragment : MvpAppCompatFragment(), CurrentMovieView {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_login_fragment, container, false
-        )
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_current_movie, container, false)
         presenter.loadMovieDetails(Data.imdbId)
