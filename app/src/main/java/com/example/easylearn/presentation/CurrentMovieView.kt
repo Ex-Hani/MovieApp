@@ -8,8 +8,9 @@ import moxy.viewstate.strategy.alias.Skip
 interface CurrentMovieView : MvpView {
 
     @AddToEndSingle
-    fun onMovieClicked(result: OmdbMovieDetails)
+    fun showMovieData(result: OmdbMovieDetails)
 
     @Skip
     fun showError()
+
 }

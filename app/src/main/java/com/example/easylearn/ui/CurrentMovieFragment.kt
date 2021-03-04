@@ -33,7 +33,7 @@ class CurrentMovieFragment : MvpAppCompatFragment(), CurrentMovieView {
         return binding.root
     }
 
-    override fun onMovieClicked(result: OmdbMovieDetails) {
+    override fun showMovieData(result: OmdbMovieDetails) {
         binding.apply {
             Glide.with(this@CurrentMovieFragment)
                 .load(result.poster)
@@ -44,7 +44,9 @@ class CurrentMovieFragment : MvpAppCompatFragment(), CurrentMovieView {
             currentMovieTextDirector.text = result.director
             currentMovieTextPlot.text = result.plot
         }
+        (activity as MainActivity).setTitle(result.title)
     }
+
 
     override fun showError() {
         activity.apply {

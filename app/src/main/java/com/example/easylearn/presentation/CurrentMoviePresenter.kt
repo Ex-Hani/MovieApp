@@ -19,7 +19,7 @@ class CurrentMoviePresenter : MvpPresenter<CurrentMovieView>(), CoroutineScope b
                 val result =
                     ApiAdapter.apiClient.loadMovieDetails(imdbId = id)
                 if (result.response)
-                    viewState.onMovieClicked(result)
+                    viewState.showMovieData(result)
                 else viewState.showError()
             } catch (e: Exception) {
                 //show error

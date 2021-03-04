@@ -15,6 +15,7 @@ import com.example.easylearn.presentation.MovieListPresenter
 import com.example.easylearn.presentation.MovieListView
 import com.example.easylearn.ui.CurrentMovieFragment
 import com.example.easylearn.ui.LoginFragment
+import com.example.easylearn.ui.MainActivity
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
 
@@ -41,6 +42,7 @@ class MovieListFragment : MvpAppCompatFragment(), MovieListView {
         }
         binding.movieListRecyclerMovies.layoutManager = LinearLayoutManager(requireContext())
         binding.movieListRecyclerMovies.adapter = adapter
+        (activity as MainActivity).setTitle("Search")
         return binding.root
     }
 

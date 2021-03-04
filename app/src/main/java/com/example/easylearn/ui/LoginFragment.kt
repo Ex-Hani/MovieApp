@@ -38,6 +38,11 @@ class LoginFragment : MvpAppCompatFragment(), LoginView {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        (activity as MainActivity).setTitle("Auth")
+    }
+
     override fun showMessageError() {
         activity.apply {
             Toast.makeText(this, getString(R.string.error), Toast.LENGTH_SHORT).show()
