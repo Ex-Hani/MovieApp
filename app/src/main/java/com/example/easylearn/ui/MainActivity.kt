@@ -15,6 +15,6 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
     fun setTitle(title: String){
-        findViewById<TextView>(R.id.main_text).setText(title)
+        getSupportActionBar()?.setTitle(title);
     }
 }
