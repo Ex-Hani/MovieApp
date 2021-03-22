@@ -1,9 +1,13 @@
 package com.example.easylearn.entities
 
+import androidx.annotation.NonNull
+import androidx.room.Entity
+import androidx.room.Ignore
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity
 data class OmdbMovieDetails(
-
     @SerializedName("Title") val title: String,
     @SerializedName("Year") val year: Int,
     @SerializedName("Rated") val rated: String,
@@ -18,10 +22,11 @@ data class OmdbMovieDetails(
     @SerializedName("Country") val country: String,
     @SerializedName("Awards") val awards: String,
     @SerializedName("Poster") val poster: String,
-    @SerializedName("Ratings") val ratings: List<OmdbRating>,
     @SerializedName("Metascore") val metascore: Int,
     @SerializedName("imdbRating") val imdbRating: Double,
     @SerializedName("imdbVotes") val imdbVotes: String,
+    @PrimaryKey
+    @NonNull
     @SerializedName("imdbID") val imdbID: String,
     @SerializedName("Type") val type: String,
     @SerializedName("DVD") val dVD: String,
@@ -29,5 +34,4 @@ data class OmdbMovieDetails(
     @SerializedName("Production") val production: String,
     @SerializedName("Website") val website: String,
     @SerializedName("Response") val response: Boolean
-
 )

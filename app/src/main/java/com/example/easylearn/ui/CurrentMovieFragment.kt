@@ -7,20 +7,29 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
-import com.example.easylearn.Data
 import com.example.easylearn.R
 import com.example.easylearn.databinding.FragmentCurrentMovieBinding
 import com.example.easylearn.entities.OmdbMovieDetails
 import com.example.easylearn.presentation.CurrentMoviePresenter
 import com.example.easylearn.presentation.CurrentMovieView
+import dagger.hilt.android.AndroidEntryPoint
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
+import moxy.presenter.ProvidePresenter
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class CurrentMovieFragment : MvpAppCompatFragment(), CurrentMovieView {
 
+    @Inject
     @InjectPresenter
     lateinit var presenter: CurrentMoviePresenter
     lateinit var binding: FragmentCurrentMovieBinding
+
+    @ProvidePresenter
+    fun providePresenter(): CurrentMoviePresenter {
+        return presenter
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,7 +38,7 @@ class CurrentMovieFragment : MvpAppCompatFragment(), CurrentMovieView {
     ): View {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_current_movie, container, false)
-        presenter.loadMovieDetails(Data.imdbId)
+        presenter.loadMovieDetails()
         return binding.root
     }
 
@@ -46,7 +55,6 @@ class CurrentMovieFragment : MvpAppCompatFragment(), CurrentMovieView {
         }
         (activity as MainActivity).setTitle(result.title)
     }
-
 
     override fun showError() {
         activity.apply {

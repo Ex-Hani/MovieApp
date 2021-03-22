@@ -8,7 +8,7 @@ import moxy.viewstate.strategy.alias.Skip
 interface MovieListView : MvpView {
 
     @Skip
-    fun toCurrentMovie(id: String)
+    fun toCurrentMovie()
 
     @AddToEndSingle
     fun setList(list: List<OmdbMovie>)
