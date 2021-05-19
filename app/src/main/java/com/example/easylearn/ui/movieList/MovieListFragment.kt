@@ -59,6 +59,7 @@ class MovieListFragment : MvpAppCompatFragment(), MovieListView {
         activity?.apply {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.main_container, CurrentMovieFragment())
+                .addToBackStack(null)
                 .commit()
         }
     }

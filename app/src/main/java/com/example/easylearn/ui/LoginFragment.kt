@@ -44,7 +44,7 @@ class LoginFragment : MvpAppCompatFragment(), LoginView {
     }
 
     override fun showMessageError() {
-        activity.apply {
+        activity?.apply {
             Toast.makeText(this, getString(R.string.error), Toast.LENGTH_SHORT).show()
         }
     }
@@ -52,11 +52,10 @@ class LoginFragment : MvpAppCompatFragment(), LoginView {
     override fun toMainScreen() {
         activity?.apply {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.main_container, MovieListFragment())
+                .add(R.id.main_container, MovieListFragment())
+                .addToBackStack(null)
                 .commit()
         }
-//        val intent = Intent(this, MovieListActivity::class.java)
-//        startActivity(intent)
 
     }
 }
